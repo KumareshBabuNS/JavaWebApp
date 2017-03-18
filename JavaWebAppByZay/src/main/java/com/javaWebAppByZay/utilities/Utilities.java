@@ -11,7 +11,6 @@ import com.javaWebAppByZay.attributes.Results;
 import com.javaWebAppByZay.responseDTOs.WeatherResponse;
 import com.javaWebAppByZay.responseDTOs.ZipCodeResponse;
 
-
 public class Utilities {
 	private static final Logger log = LoggerFactory.getLogger(Utilities.class);
 
@@ -21,7 +20,7 @@ public class Utilities {
 		try {
 			int result = Integer.parseInt(zipCode);
 		} catch (Exception e) {
-			log.info("failed to parse!");
+			log.info("failed to parse zipCode!");
 			return false;
 		}
 		return true;
@@ -47,9 +46,12 @@ public class Utilities {
 		return null;
 	}
 
+	// you must create a darksky account in order to obtain an apiKey to use their services
 	public static WeatherResponse fetchWeather(Location loc) {
 		RestTemplate rt = new RestTemplate();
-		String url = "https://api.darksky.net/forecast/aa041c9efbf81c2c63fad468e2f179ac/" + loc.getLat() + "," + loc.getLng();
+		// create a darksky account and replace this null key with your key
+		String apiKey = null;
+		String url = "https://api.darksky.net/forecast/" + apiKey + "/" + loc.getLat() + "," + loc.getLng();
 		WeatherResponse wr = rt.getForObject(url, WeatherResponse.class);
 		log.info(wr.toString());
 		return wr;

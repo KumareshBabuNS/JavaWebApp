@@ -1,0 +1,6 @@
+---
+applications:
+- name: JavaWebAppByZay
+  memory: 250M
+  instances: 1
+  random-route: true
