@@ -1,4 +1,4 @@
-package com.javaWebAppByZay;
+package com.javaWebApp;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
