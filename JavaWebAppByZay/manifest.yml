@@ -5,3 +5,4 @@ applications:
   instances: 1
   random-route: true
   buildpack: java_buildpack
+  Main-Class: RunApp.java
