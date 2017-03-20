@@ -4,3 +4,4 @@ applications:
   memory: 250M
   instances: 1
   random-route: true
+  buildpack: java_buildpack
